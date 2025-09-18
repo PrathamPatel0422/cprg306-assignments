@@ -1,9 +1,11 @@
 import Link from "next/link";
+import StudentInfo from "./student-info";
 
 export default function Page() {    
     return (
         <main>
-            <Link href="/week-2/student-info.js">Student Info</Link>
+            <h1>Shopping List</h1>
+            <StudentInfo />
         </main>
     );
 }

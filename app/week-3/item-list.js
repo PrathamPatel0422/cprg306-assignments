@@ -1,18 +1,7 @@
 import Item from "./item";
 
 export default function ItemList() {
-  return (
-    <main>
-      <script>
-        for (let i = 0; i < itemList.length; i++) {
-          <Item name={itemList[i].name} quantity={itemList[i].quantity} category={itemList[i].category} />
-        }
-      </script>
-    </main>
-  );
-}
-
-const item1 = {
+  const item1 = {
   name: "milk, 4 L 🥛",
   quantity: 1,
   category: "dairy",
@@ -84,6 +73,58 @@ const item12 = {
   category: "household",
 };
 
-let itemList = [
-  item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12
-];
+return (
+  <main>
+    <div className="mx-auto max-w-md p-4">
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item1} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item2} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item3} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item4} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item5} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item6} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item7} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item8} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item9} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item10} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item11} />
+      </ul>
+
+      <ul className="bg-slate-800 my-4 p-2 w-96">
+        <Item item={item12} />
+      </ul> 
+    </div>
+  </main>
+);
+}
+

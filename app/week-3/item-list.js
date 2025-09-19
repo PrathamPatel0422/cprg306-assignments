@@ -1,8 +1,13 @@
-import item from "./item";
+import Item from "./item";
+
 export default function ItemList() {
   return (
     <main>
-    <item details={item1} />
+      <script>
+        for (let i = 0; i < itemList.length; i++) {
+          <Item name={itemList[i].name} quantity={itemList[i].quantity} category={itemList[i].category} />
+        }
+      </script>
     </main>
   );
 }
@@ -78,3 +83,7 @@ const item12 = {
   quantity: 4,
   category: "household",
 };
+
+let itemList = [
+  item1, item2, item3, item4, item5, item6, item7, item8, item9, item10, item11, item12
+];

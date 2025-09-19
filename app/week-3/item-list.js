@@ -1,3 +1,12 @@
+import item from "./item";
+export default function ItemList() {
+  return (
+    <main>
+    <item details={item1} />
+    </main>
+  );
+}
+
 const item1 = {
   name: "milk, 4 L 🥛",
   quantity: 1,

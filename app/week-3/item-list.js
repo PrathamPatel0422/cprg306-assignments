@@ -75,7 +75,7 @@ const item12 = {
 
 return (
   <main>
-    <div className="mx-auto max-w-md p-4">
+    <div>
       <ul className="bg-slate-800 my-4 p-2 w-96">
         <Item item={item1} />
       </ul>

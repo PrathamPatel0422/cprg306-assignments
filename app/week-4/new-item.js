@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function newItem() {
+export default function NewItem() {
     let [quantity, SetQuantity] = useState(1);
 
     const increment = () => {

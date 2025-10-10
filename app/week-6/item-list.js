@@ -26,7 +26,7 @@ export default function ItemList() {
       <div> 
         <ul> 
           {itemArray.map((item) => (
-            <li className="mb-4 mt-4">
+            <li key={item.id} className="mb-4 mt-4">
               <Item item={item} />           
             </li>
           ))}

@@ -20,13 +20,13 @@ export default function ItemList() {
   return (
     <main>
       <div>
-        <button className="border border-black bg-white text-black rounded p-1 m-2" onClick={() => setSortBy("name")}> Sort by Name</button>
-        <button className="border border-black bg-white text-black rounded p-1 m-2" onClick={() => setSortBy("category")}> Sort by Category</button>
+        <button className="border border-black bg-white text-black rounded p-2 m-2 hover:cursor-pointer hover:bg-gray-300 font-bold" onClick={() => setSortBy("name")}> Sort by Name</button>
+        <button className="border border-black bg-white text-black rounded p-2 m-2 hover:cursor-pointer hover:bg-gray-300 font-bold" onClick={() => setSortBy("category")}> Sort by Category</button>
       </div>
-      <div>
+      <div> 
         <ul> 
           {itemArray.map((item) => (
-            <li className="m-2 p-2">
+            <li className="mb-4 mt-4">
               <Item item={item} />           
             </li>
           ))}

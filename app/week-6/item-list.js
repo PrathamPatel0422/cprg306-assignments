@@ -1,128 +1,31 @@
+"use client";
+
 import Item from "./item";
+import ItemData from "./items.json";
+
+import { use, useState } from "react";
 
 export default function ItemList() {
-  const item1 = {
-  name: "milk, 4 L 🥛",
-  quantity: 1,
-  category: "dairy",
-};
+  const [sortBy, setSortBy] = useState("name");
+  let itemArray = [...ItemData] 
 
-const item2 = {
-  name: "bread 🍞",
-  quantity: 2,
-  category: "bakery",
-};
 
-const item3 = {
-  name: "eggs, dozen 🥚",
-  quantity: 2,
-  category: "dairy",
-};
-
-const item4 = {
-  name: "bananas 🍌",
-  quantity: 6,
-  category: "produce",
-};
-
-const item5 = {
-  name: "broccoli 🥦",
-  quantity: 3,
-  category: "produce",
-};
-
-const item6 = {
-  name: "chicken breasts, 1 kg 🍗",
-  quantity: 1,
-  category: "meat",
-};
-
-const item7 = {
-  name: "pasta sauce 🍝",
-  quantity: 3,
-  category: "canned goods",
-};
-
-const item8 = {
-  name: "spaghetti, 454 g 🍝",
-  quantity: 2,
-  category: "dry goods",
-};
-
-const item9 = {
-  name: "toilet paper, 12 pack 🧻",
-  quantity: 1,
-  category: "household",
-};
-
-const item10 = {
-  name: "paper towels, 6 pack",
-  quantity: 1,
-  category: "household",
-};
-
-const item11 = {
-  name: "dish soap 🍽️",
-  quantity: 1,
-  category: "household",
-};
-
-const item12 = {
-  name: "hand soap 🧼",
-  quantity: 4,
-  category: "household",
-};
-
+  itemArray.sort((a,b) => a.name.localeCompare(b.name))
 return (
   <main>
     <div>
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item1} />
+      <button className="border border-black bg-white text-black rounded p-1 m-2" onClick={() => setSortBy("name")}> Sort by Name</button>
+      <button className="border border-black bg-white text-black rounded p-1 m-2" onClick={() => setSortBy("category")}> Sort by Category</button>
+      <h1>{sortBy}</h1>
+    </div>
+    <div>
+      <ul> 
+        {itemArray.map((item) => (
+          <li className="m-2 p-2">
+            <Item item={item} />           
+          </li>
+        ))}
       </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item2} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item3} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item4} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item5} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item6} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item7} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item8} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item9} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item10} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item11} />
-      </ul>
-
-      <ul className="bg-slate-800 my-4 p-2 w-96">
-        <Item item={item12} />
-      </ul> 
     </div>
   </main>
 );

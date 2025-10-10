@@ -70,7 +70,6 @@ export default function NewItem() {
                         value={category}
                         onChange={(event) => setCategory(event.target.value)}
                         className="border border-black text-black rounded p-2"
-                        id="item-category"
                     >
                         <option value="Produce">Produce</option>
                         <option value="Dairy">Dairy</option>

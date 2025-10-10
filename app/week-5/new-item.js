@@ -46,7 +46,7 @@ export default function NewItem() {
 
                 <div className="flex justify-between mb-2 items-center">
                     <div className="flex items-center gap-2">
-                        <h1 className="text-2xl text-black border border-black pl-3 pr-3 rounded">{quantity}</h1>
+                        <input readOnly className=" text-center text-2xl text-black border border-black rounded w-10 font-extrabold" value={quantity} type="text"/>
                         <button
                             type="button"
                             disabled={quantity === 1}

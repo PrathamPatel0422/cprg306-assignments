@@ -11,7 +11,7 @@ export default function NewItem() {
         event.preventDefault();
         const item = { name, quantity, category };
         console.log(item);
-        alert(`Item Added: ${name} | Quantity: ${quantity} | Category: ${category}`);
+        alert(`Item Added: ${name} | Quantity: ${quantity} | Category: ${category}`);        
 
         // reset form values
         setName("");

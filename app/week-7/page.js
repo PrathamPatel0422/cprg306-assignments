@@ -1,11 +1,13 @@
-import Item from "./item.js";
+import NewItem from "./new-item.js";
+import ItemList from "./item-list.js";
 
 export default function Page() {    
     return (
         <main>
             <div className="mx-auto max-w-md p-4">
                 <h1 className="text-4xl font-bold">Shopping List</h1>
-                <Item />
+                <ItemList />
+
             </div>
             
         </main>

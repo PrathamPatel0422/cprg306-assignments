@@ -1,22 +1,22 @@
 "use client";
 
 import { useState } from "react";
+import ItemList from "./item-list";
 
-export default function NewItem() {
+
+export default function NewItem({onAddItem}) {
     const [quantity, setQuantity] = useState(1);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Produce");
+    const [item, setItem] = useState({ id: (Math.floor(Math.random() * 10000)) , name: " ", quantity: 1, category: "Produce" });
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        const item = { name, quantity, category };
-        console.log(item);
-        alert(`Item Added: ${name} | Quantity: ${quantity} | Category: ${category}`);
 
-        // reset form values
-        setName("");
-        setQuantity(1);
-        setCategory("Produce");
+        console.log(item);
+
+        onAddItem({...item});
+        setItem({id: (Math.floor(Math.random() * 10000)) , name: " ", quantity: 1, category: "Produce"})
     };
 
     const increment = () => {

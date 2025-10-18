@@ -1,27 +1,26 @@
 "use client";
 
 import Item from "./item";
-import ItemData from "./items.json";
 
-import { use, useState } from "react";
+import { useState } from "react";
 
-export default function ItemList() {
+export default function ItemList({items}) {
   const [sortBy, setSortBy] = useState("name");
-  let itemArray = [...ItemData];
+
 
   if(sortBy === "name"){
-    itemArray.sort((a,b) => a.name.localeCompare(b.name));
+    items.sort((a,b) => a.name.localeCompare(b.name));
     
   } 
   else if(sortBy === "category"){
-    itemArray.sort((a,b) => a.category.localeCompare(b.category));
+    items.sort((a,b) => a.category.localeCompare(b.category));
   }
 
   return (
     <main>
       <div> 
         <ul> 
-          {itemArray.map((item) => (
+          {items.map((item) => (
             <li key={item.id} className="mb-4 mt-4">
               <Item item={item} />           
             </li>

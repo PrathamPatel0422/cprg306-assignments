@@ -8,15 +8,17 @@ export default function NewItem({onAddItem}) {
     const [quantity, setQuantity] = useState(1);
     const [name, setName] = useState("");
     const [category, setCategory] = useState("Produce");
-    const [item, setItem] = useState({ id: (Math.floor(Math.random() * 10000)) , name: " ", quantity: 1, category: "Produce" });
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        const item = {  id: (Math.floor(Math.random() * 10000)), name, quantity, category };
         console.log(item);
 
         onAddItem({...item});
-        setItem({id: (Math.floor(Math.random() * 10000)) , name: " ", quantity: 1, category: "Produce"})
+
+        setName("");
+        setQuantity(1);
+        setCategory("Produce");
     };
 
     const increment = () => {

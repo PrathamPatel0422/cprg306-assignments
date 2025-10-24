@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import MealIdeas from "./week-8/meal-ideas";
+
 export default function Page() {
   return (
     <main>
@@ -24,6 +26,9 @@ export default function Page() {
       </div>
       <div>
         <Link href="/week-8">Week 8 Assignment</Link>
+      </div>
+      <div>
+        <MealIdeas />
       </div>
     </main>
   );

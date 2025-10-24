@@ -3,7 +3,7 @@ import { useState } from "react";
 import ItemList from "./item-list.js";
 import NewItem from "./new-item.js";
 import itemData from "./items.json";
-
+import MealIdeas  from "./meal-ideas.js";
 export default function Page() {    
     const [items, setItems] = useState(itemData); 
 
@@ -16,7 +16,6 @@ export default function Page() {
                 <h1 className="text-4xl font-bold">Shopping List</h1>
                 <NewItem  onAddItem={handleAddItem}/>
                 <ItemList items={items}/>
-              
             </div>
             
         </main>

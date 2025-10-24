@@ -1,14 +1,12 @@
 "use client";
 
-import useState from "react";
-import useEffect from "react";
+import {useState, useEffect} from "react";
+
 
 
 export default function MealIdeas({ingredient}){
     const [meals, setMeals] = useState([]);
-    
-    fetchMealIdeas({ingredient, meals});    
-
+    fetchMealIdeas({ingredient, meals, setMeals});
     return (
         <main>
 
@@ -16,7 +14,7 @@ export default function MealIdeas({ingredient}){
     );
 }
 
-export function fetchMealIdeas({ingredient, meals}) {
+export function fetchMealIdeas({ingredient, meals, setMeals}) {
     const fetchMeals = async () => {
         try {
             const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
@@ -25,7 +23,6 @@ export function fetchMealIdeas({ingredient, meals}) {
         } catch (error) {
             console.error("Error fetching meal ideas:", error);
         }
-
         console.log(data[0]['strMeal']);
     };
 

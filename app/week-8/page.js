@@ -16,6 +16,7 @@ export default function Page() {
                 <h1 className="text-4xl font-bold">Shopping List</h1>
                 <NewItem  onAddItem={handleAddItem}/>
                 <ItemList items={items}/>
+                <MealIdeas ingredient="chicken"/>
             </div>
             
         </main>

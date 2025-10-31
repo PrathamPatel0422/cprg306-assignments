@@ -21,8 +21,10 @@ export default function ItemList({items}) {
       <div> 
         <ul> 
           {items.map((item) => (
-            <li key={item.id} className="mb-4 mt-4">
-              <Item item={item} />           
+            <li key={item.id} className="mb-4 mt-4 w-full">
+              <button className="w-full border border-white text-white rounded p-2 m-0 hover:cursor-pointer hover:bg-gray-300 font-bold">
+                <Item item={item} />
+              </button>
             </li>
           ))}
         </ul>

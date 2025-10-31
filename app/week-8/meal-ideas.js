@@ -16,20 +16,17 @@ export default function MealIdeas({ingredient}){
         }
     }, [ingredient]);
 
-
     return (
         <main>
             <div>
                 {meals.length > 0 ? (
-                meals.map((meal) => (
-                    <div key={meal.idMeal}>
-                    <h3>{meal.strMeal}</h3>
-                    <img src={meal.strMealThumb} alt={meal.strMeal} width="100" />
-                    </div>
-                ))
-                ) : (
-                <p>No meals found.</p>
-                )}
+                    meals.map((meal) => (
+                        <div key={meal.idMeal}>
+                        <h3>{meal.strMeal}</h3>
+                        </div>
+                    ))
+                    ) : (<p>No meals found.</p>)
+                }
             </div>
         </main>
     );

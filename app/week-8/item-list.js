@@ -6,7 +6,7 @@ import { useState } from "react";
 
 export default function ItemList({items}) {
   const [sortBy, setSortBy] = useState("name");
-
+  const [selectedItem, setSelectedItem] = useState();
 
   if(sortBy === "name"){
     items.sort((a,b) => a.name.localeCompare(b.name));
@@ -22,7 +22,8 @@ export default function ItemList({items}) {
         <ul> 
           {items.map((item) => (
             <li key={item.id} className="mb-4 mt-4 w-full">
-              <button className="w-full border border-white text-white rounded p-2 m-0 hover:cursor-pointer hover:bg-gray-300 font-bold">
+              <button className="w-full border border-white text-white rounded p-2 m-0 hover:cursor-pointer hover:bg-gray-300 font-bold"
+                    onClick={() => setSelectedItem(item)}>
                 <Item item={item} />
               </button>
             </li>

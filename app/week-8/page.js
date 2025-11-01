@@ -13,8 +13,11 @@ export default function Page() {
     }
 
     const handleItemSelect = (item) => {
-        // extract and clean name, then send it to setSelectedItem()
-        setSelectedItem(item)
+        let cleanItem = item.name.replace(/[^\p{L}\p{N}\p{P}\p{Z}^$\n]/gu, '');
+        cleanItem = cleanItem.split(" ")[0];
+        cleanItem = cleanItem.trim().toLowerCase();
+        console.log(cleanItem);
+        setSelectedItem(cleanItem);
     }
 
     return (
@@ -25,7 +28,7 @@ export default function Page() {
                         <h1 className="text-4xl font-bold">Shopping List</h1>
                         <div className="mt-4">
                             <NewItem onAddItem={handleAddItem} />
-                            <ItemList items={items} />
+                            <ItemList items={items} onItemSelect={handleItemSelect}/>
                         </div>
                     </div>
                 </div>

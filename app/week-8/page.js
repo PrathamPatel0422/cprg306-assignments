@@ -13,10 +13,15 @@ export default function Page() {
     }
 
     const handleItemSelect = (item) => {
-        let cleanItem = item.name.replace(/[^\p{L}\p{N}\p{P}\p{Z}^$\n]/gu, '');
+        let cleanItem = item.name.replace(/[^\p{L}\p{N}\p{P}\p{Z}^$\n]/gu, ''); // remove emojis
         cleanItem = cleanItem.split(" ")[0];
         cleanItem = cleanItem.trim().toLowerCase();
         console.log(cleanItem);
+
+        if(cleanItem[cleanItem.length-1] === ','){ // check for trailing comma
+            cleanItem = cleanItem.slice(0, -1);
+        }
+
         setSelectedItem(cleanItem);
     }
 

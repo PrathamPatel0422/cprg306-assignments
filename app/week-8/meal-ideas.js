@@ -20,13 +20,18 @@ export default function MealIdeas({ingredient}){
         <main>
             <div>
                 {meals.length > 0 ? (
-                    meals.map((meal) => (
-                        <div key={meal.idMeal}>
-                        <h3>{meal.strMeal}</h3>
-                        </div>
-                    ))
-                    ) : (<p>No meals found.</p>)
-                }
+                    <div className="flex flex-wrap items-stretch">
+                        {meals.map((meal) => (
+                            <div key={meal.idMeal} className="w-1/2 p-2 flex">
+                                <div className="border border-white text-white p-4 rounded flex items-center justify-center flex-1">
+                                    <h3 className="text-center">{meal.strMeal}</h3>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                ) : (
+                    <p className="text-white">No meals found.</p>
+                )}
             </div>
         </main>
     );
